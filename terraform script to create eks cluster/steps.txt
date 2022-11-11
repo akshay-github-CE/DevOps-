@@ -1,0 +1,53 @@
+create vpc
+create subnet, private public
+create intragateway ,nat gateway
+attach with subnets
+intra with public
+nat with private
+route tables- private, public
+
+install awscli---
+
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" 
+
+sudo apt install unzip
+
+sudo unzip awscliv2.zip  
+
+sudo ./aws/install
+
+aws --version
+
+
+install eksctl---
+
+curl --silent --location "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp
+
+Move the extracted binary to /usr/local/bin. 
+
+sudo mv /tmp/eksctl /usr/local/bin
+
+eksctl version
+
+
+
+
+install kubectl----
+
+sudo curl --silent --location -o /usr/local/bin/kubectl   https://s3.us-west-2.amazonaws.com/amazon-eks/1.22.6/2022-03-09/bin/linux/amd64/kubectl
+
+
+
+sudo chmod +x /usr/local/bin/kubectl 
+
+
+
+Verify if kubectl got installed
+kubectl version --short --client
+
+run terraform file
+update kubeconfig
+aws eks update-kubeconfig --name my-eks-cluster --region us-east-1
+
+
+
